@@ -213,6 +213,13 @@ spring:
     password: guest
 ```
 
+## Additional Tests:
+TODO: these tests should be covered:
+
+- Check Multiple Producer in RPC mode
+- Check Multiple Consumer in RPC mode
+- check if it is possible to acknowledge message when processed
+
 
 
 

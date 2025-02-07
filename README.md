@@ -3,3 +3,9 @@
 In this project we are going to test some of Spring Boot libraries and integrations 
 
 - [Message Brokers](message-brokers/README.md)
+
+TODO:
+- Databases
+- APIs/RPCs
+- Spring Cloud modules
+- Plugins
