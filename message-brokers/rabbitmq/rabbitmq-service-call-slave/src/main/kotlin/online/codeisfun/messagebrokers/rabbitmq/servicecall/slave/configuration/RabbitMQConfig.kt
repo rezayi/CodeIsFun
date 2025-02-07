@@ -33,17 +33,17 @@ class RabbitMQConfig {
 
     @Bean
     fun tasksRequestBinding(
-        @Qualifier("tasksRequestQueue") tasksQueue: Queue,
+        @Qualifier("tasksRequestQueue") queue: Queue,
         exchange: DirectExchange
     ): Binding {
-        return BindingBuilder.bind(tasksQueue).to(exchange).with(TASKS_REQUEST_ROUTING_KEY)
+        return BindingBuilder.bind(queue).to(exchange).with(TASKS_REQUEST_ROUTING_KEY)
     }
 
     @Bean
     fun messagesRequestBinding(
-        @Qualifier("messagesRequestQueue") messagesQueue: Queue,
+        @Qualifier("messagesRequestQueue") queue: Queue,
         exchange: DirectExchange
     ): Binding {
-        return BindingBuilder.bind(messagesQueue).to(exchange).with(MESSAGES_REQUEST_ROUTING_KEY)
+        return BindingBuilder.bind(queue).to(exchange).with(MESSAGES_REQUEST_ROUTING_KEY)
     }
 }

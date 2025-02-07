@@ -1,6 +1,6 @@
 package online.codeisfun.messagebrokers.rabbitmq.constants
 
-const val DIRECT_EXCHANGE_NAME = "exchange.direct"
+const val DIRECT_EXCHANGE_NAME = "new-exchange1"
 const val FANOUT_EXCHANGE_NAME = "exchange.fanout"
 
 class QueueConstants {
