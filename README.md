@@ -1,4 +1,5 @@
-# examples
-In This Repository I'm going to add many libraries usage examples<br/>
+# CodeIsFun Examples
 
-in spring directory I'll implement some examples for Spring, SpringBoot and SpringCloud libraries
+In this project we are going to test some of Spring Boot libraries and integrations 
+
+- [Message Brokers](message-brokers/README.md)
