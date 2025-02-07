@@ -14,7 +14,12 @@
     <name>CodeIsFun :: Examples :: Message Brokers :: RabbitMQ</name>
 
     <modules>
+        <module>rabbitmq-constants</module>
         <module>rabbitmq-queue-producer</module>
         <module>rabbitmq-queue-consumer</module>
+        <module>rabbitmq-service-call-master</module>
+        <module>rabbitmq-service-call-slave</module>
+        <module>rabbitmq-pubsub-publisher</module>
+        <module>rabbitmq-pubsub-subscriber</module>
     </modules>
 </project>

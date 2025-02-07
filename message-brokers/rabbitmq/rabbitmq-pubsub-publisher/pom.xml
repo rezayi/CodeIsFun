@@ -8,8 +8,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>rabbitmq-queue-producer</artifactId>
-    <name>CodeIsFun :: Examples :: Message Brokers :: RabbitMQ :: Queue :: Producer</name>
+    <artifactId>rabbitmq-pubsub-publisher</artifactId>
+    <name>CodeIsFun :: Examples :: Message Brokers :: RabbitMQ :: Pub-Sub :: Publisher</name>
 
     <dependencies>
         <dependency>
