@@ -1,4 +1,4 @@
-# CodeIsFun Examples :: Serializers
+# Code Is Fun :: Serializers
 
 Serializations:
 - [Kryo](kryo/README.md)
