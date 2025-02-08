@@ -3,6 +3,7 @@
 In this project we are going to test some of Spring Boot libraries and integrations 
 
 - [Message Brokers](message-brokers/README.md)
+- [Serializations](serializations/README.md)
 
 TODO:
 - Databases (Sql: Postgresql, NoSQL: Cassandra, Elasticsearch, MongoDB, Redis,...)

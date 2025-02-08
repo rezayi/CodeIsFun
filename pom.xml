@@ -18,6 +18,7 @@
 
     <modules>
         <module>message-brokers</module>
+        <module>serializations</module>
     </modules>
 
     <properties>

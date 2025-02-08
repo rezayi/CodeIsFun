@@ -1,0 +1,1 @@
+# CodeIsFun :: Example :: Serialization :: Kryo
