@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package google.api;
+
+option java_package = "online.codeisfun.serialization.proto.proto_models";
+option java_outer_classname = "HtmlContainerProto";
+option java_multiple_files = false;
+
+message HtmlContainer {
+  string content = 1;
+}

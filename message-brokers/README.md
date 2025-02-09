@@ -1,4 +1,4 @@
-# CodeIsFun Examples :: Message brokers
+## CodeIsFun Examples :: Message brokers
 
 In this module we are going to test some of message-brokers integrations with spring boot.
 

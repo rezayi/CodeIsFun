@@ -6,8 +6,10 @@ In this project we are going to test some of Spring Boot libraries and integrati
 - [Serializations](serializations/README.md)
 
 TODO:
-- Databases (Sql: Postgresql, NoSQL: Cassandra, Elasticsearch, MongoDB, Redis,...)
+- Data structures
+- Concurrency (Java threads, virtual threads, Kotlin Coroutines,...)
 - APIs/RPCs (RestAPI, GRPC, RabitmQ RPC, HTTP3,...)
+- Databases (Sql: Postgresql, NoSQL: Cassandra, Elasticsearch, MongoDB, Redis,...)
 - Spring Cloud modules (ServiceDiscovery, Centralized Configuration, Load Balancing, OpenFeign, WebFlux, ...)
 - Plugins (Maven Plugin, Annotation Processing,...)
-- Kotlin Coroutines
+

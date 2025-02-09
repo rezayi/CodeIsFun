@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package google.api;
+
+option java_package = "online.codeisfun.serialization.proto.proto_models";
+option java_outer_classname = "OrderProto";
+option java_multiple_files = false;
+
+message Order {
+  int32 order_id = 1;
+  Customer customer = 2;
+  repeated OrderItem items = 3;
+  Address address = 4;
+  OrderStatus order_status = 5;
+  int64 created_at = 6;
+  int64 updated_at = 7;
+  string description = 8;
+
+  message Customer {
+    int32 customer_id = 1;
+    string name = 2;
+    string email = 3;
+    string phone = 4;
+  }
+
+  message OrderItem {
+    int32 item_id = 1;
+    string name = 2;
+    int32 quantity = 3;
+    double price = 4;
+  }
+
+  message Address {
+    string street = 1;
+    string city = 2;
+    string state = 3;
+    string postal_code = 4;
+    string country = 5;
+  }
+
+  enum OrderStatus {
+    PENDING = 0;
+    CONFIRMED = 1;
+    SHIPPED = 2;
+    DELIVERED = 3;
+    CANCELED = 4;
+  }
+}
