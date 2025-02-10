@@ -1,4 +1,4 @@
-## CodeIsFun :: Example :: Serialization :: Kryo
+## Code Is Fun :: Example :: Serialization :: Kryo
 
 In this module Serialization/Deserialization of objects in [serialization-commons](../serialization-commons) has been implemented using `Kryo` Serializer.
 
