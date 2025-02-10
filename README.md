@@ -12,4 +12,5 @@ TODO:
 - Databases (Sql: Postgresql, NoSQL: Cassandra, Elasticsearch, MongoDB, Redis,...)
 - Spring Cloud modules (ServiceDiscovery, Centralized Configuration, Load Balancing, OpenFeign, WebFlux, ...)
 - Plugins (Maven Plugin, Annotation Processing,...)
+- Loggers
 
