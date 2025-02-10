@@ -17,6 +17,7 @@
         <module>kryo</module>
         <module>serialization-commons</module>
         <module>protobuf</module>
+        <module>json</module>
     </modules>
 
     <dependencies>

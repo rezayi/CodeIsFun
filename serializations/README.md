@@ -7,7 +7,7 @@ For each algorithm, a separate module has been implemented.
 these serialization algorithms have been implemented:
 - [Kryo](kryo/README.md)
 - [Protobuf](protobuf/README.md)
-- JSON
+- [JSON](json/README.md)
 - BSON
 - Message Pack
 
@@ -23,16 +23,17 @@ these serialization algorithms have been implemented:
 
 ### process time (nanoseconds)
 
-|  level   | Order #0 | Order #1 | Order #2 | Order #3 | Order #4 | Order #5 |  Html   |
-|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:-------:|
-|   Kryo   |   1287   |   1461   |   1921   |   2371   |   2837   |   3314   | 1728117 |
-| ProtoBuf |   855    |   1267   |   1550   |   1980   |   2460   |   2831   | 704565  |
-
+|      level       | Order #0 | Order #1 | Order #2 | Order #3 | Order #4 | Order #5 |   Html    |
+|:----------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:---------:|
+|       Kryo       |  1,287   |  1,461   |  1,921   |  2,371   |  2,837   |  3,314   | 1,728,117 |
+|     ProtoBuf     |   855    |  1,267   |  1,550   |  1,980   |  2,460   |  2,831   |  704,565  |
+| JSON (fasterxml) |  3,528   |  5,269   |  6,905   |  8,907   |  10,809  |  12,544  | 3,364,299 |
 
 ### Serialized message size (bytes)
 
-|  level   | Order #0 | Order #1 | Order #2 | Order #3 | Order #4 | Order #5 |  Html  |
-|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:------:|
-|   Kryo   |   141    |   486    |   829    |   1173   |   1516   |   1860   | 633231 |
-| ProtoBuf |   141    |   508    |   872    |   1236   |   1601   |   1965   | 633232 |
+|      level       | Order #0 | Order #1 | Order #2 | Order #3 | Order #4 | Order #5 |  Html   |
+|:----------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:-------:|
+|       Kryo       |   141    |   486    |   829    |  1,173   |  1,516   |  1,860   | 633,231 |
+|     ProtoBuf     |   141    |   508    |   872    |  1,236   |  1,601   |  1,965   | 633,232 |
+| JSON (fasterxml) |   353    |   830    |  1,308   |  1,786   |  2,264   |  2,742   | 650,820 |
 
