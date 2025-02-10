@@ -1,4 +1,4 @@
-## CodeIsFun Examples :: Serializers
+## Code Is Fun :: Serializers
 
 In this module serialization and deserialization for several serialization algorithms have been implemented.<br>
 For this test, a unique test scenario has been implemented in [serialization-commons](serialization-commons) module.<br>
