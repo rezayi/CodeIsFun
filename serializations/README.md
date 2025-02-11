@@ -10,6 +10,7 @@ these serialization algorithms have been implemented:
 - [JSON](json/README.md)
 - BSON
 - Message Pack
+- Apache Avro
 
 
 ## Test Scenarios:
