@@ -8,8 +8,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>rabbitmq-queue-consumer</artifactId>
-    <name>CodeIsFun :: Examples :: Message Brokers :: RabbitMQ :: Queue :: Consumer</name>
+    <artifactId>rabbitmq-queue-consumer-manual-acknowledgement</artifactId>
+    <name>CodeIsFun :: Examples :: Message Brokers :: RabbitMQ :: Queue :: Consumer (Manual Acknowledgement)</name>
 
     <dependencies>
         <dependency>

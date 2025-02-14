@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 class RabbitMQMessagesConsumer {
 
     @RabbitListener(queues = [MESSAGES_QUEUE_NAME])
-    fun receiveMessage(message: String) {
+    fun receiveMessageSuccess(message: String) {
         println("Received Message: $message")
     }
 }

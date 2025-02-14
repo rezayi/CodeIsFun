@@ -1,7 +1,8 @@
 package online.codeisfun.messagebrokers.rabbitmq.constants
 
-const val DIRECT_EXCHANGE_NAME = "new-exchange1"
+const val DIRECT_EXCHANGE_NAME = "exchange.direct"
 const val FANOUT_EXCHANGE_NAME = "exchange.fanout"
+const val DLX_EXCHANGE_NAME = "exchange.dlx"
 
 class QueueConstants {
     companion object {
@@ -9,6 +10,9 @@ class QueueConstants {
         const val MESSAGES_QUEUE_NAME = "queue.messages"
         const val TASKS_ROUTING_KEY = "routing.tasks"
         const val MESSAGES_ROUTING_KEY = "routing.messages"
+
+        const val DLX_QUEUE_NAME = "queue.dlx"
+        const val DLX_ROUTING_KEY = "routing.dlx"
     }
 }
 

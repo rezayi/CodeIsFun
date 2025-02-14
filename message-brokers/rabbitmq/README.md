@@ -56,6 +56,21 @@ class RabbitMQMessagesConsumer {
 }
 ```
 
+## 1-1 Pull messages from the Queue manually
+To pull messages from queues manually we need to use `RabbitTemplate` bean.<br> 
+The configurations and producer is completely like previous part.<br>
+Consumer should be like below:
+```kotlin
+@Service
+class RabbitMQMessagesConsumer(val rabbitTemplate: RabbitTemplate) {
+
+    fun receiveMessage(ack: Boolean): String? {
+        val message: Message? = rabbitTemplate.receive(QueueConstants.MESSAGES_QUEUE_NAME)
+        return message?.body?.let { String(it) }
+    }
+}
+```
+
 ## 2- Service Call (RPC)
 RabbitMQ can be used as `RPC`.<br>
 Imagine ServiceA wants to call an `RPC` of ServiceB. We call ServiceA as `Master` and serviceB as `Slave`.<br>
@@ -213,19 +228,16 @@ spring:
     password: guest
 ```
 
-## Additional Tests:
-TODO: these tests should be covered:
+## Acknowledge message processed
+To acknowledge whether a message has been processed successfully or not, `rabbitTemplate` cannot be used.<br>
+When we use `rabbitTemplate.receive()`, the message will remove from the queue immediately.
+To acknowledge the message processing manually, we should use `RabbitListener` with both `message` and `channel` in input.
+using `channel` we can use acknowledgement options.<br>
+rabbit supports these kind of acknowledgements:
+- **basicAck:** message processed successfully
+- **basicNack with requeue:** message couldn't process successfully, but requeue it to process it again.
+- **basicNack without requeue or basicReject:** message couldn't process successfully, but we don't want to reprocess it.
 
-- Check Multiple Producer in RPC mode
-- Check Multiple Consumer in RPC mode
-- check if it is possible to acknowledge message when processed
-
-
-
-
-
-
-
-
-
-
+### What will happen if we reject a message?
+If we don't set any setting for, it will be discarded.<br> 
+But if we set a `dead letter exchange` for it, It will be sent it `dead letter queue` automatically.

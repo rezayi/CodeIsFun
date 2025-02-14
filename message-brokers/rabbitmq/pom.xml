@@ -16,7 +16,9 @@
     <modules>
         <module>rabbitmq-constants</module>
         <module>rabbitmq-queue-producer</module>
-        <module>rabbitmq-queue-consumer</module>
+        <module>rabbitmq-queue-consumer-listener</module>
+        <module>rabbitmq-queue-consumer-pull-message</module>
+        <module>rabbitmq-queue-consumer-manual-acknowledgement</module>
         <module>rabbitmq-service-call-master</module>
         <module>rabbitmq-service-call-slave</module>
         <module>rabbitmq-pubsub-publisher</module>

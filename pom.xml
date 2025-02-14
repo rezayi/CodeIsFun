@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>online.codeisfun</groupId>
-    <artifactId>examples</artifactId>
+    <artifactId>code-is-fun</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>CodeIsFun :: Examples</name>
+    <name>CodeIsFun</name>
 
     <modules>
         <module>message-brokers</module>
