@@ -18,6 +18,7 @@
         <module>serialization-commons</module>
         <module>protobuf</module>
         <module>json</module>
+        <module>avro</module>
     </modules>
 
     <dependencies>

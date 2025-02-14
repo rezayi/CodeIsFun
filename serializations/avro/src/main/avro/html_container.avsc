@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "HtmlObjectContainer",
+  "namespace": "online.codeisfun.serialization.avro",
+  "fields": [
+    {
+      "name": "content",
+      "type": "string"
+    }
+  ]
+}

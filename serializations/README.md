@@ -8,9 +8,9 @@ these serialization algorithms have been implemented:
 - [Kryo](kryo/README.md)
 - [Protobuf](protobuf/README.md)
 - [JSON](json/README.md)
+- [Avro](avro/README.md)
 - BSON
 - Message Pack
-- Apache Avro
 
 
 ## Test Scenarios:
@@ -29,6 +29,7 @@ these serialization algorithms have been implemented:
 |       Kryo       |  1,287   |  1,461   |  1,921   |  2,371   |  2,837   |  3,314   | 1,728,117 |
 |     ProtoBuf     |   855    |  1,267   |  1,550   |  1,980   |  2,460   |  2,831   |  704,565  |
 | JSON (fasterxml) |  3,528   |  5,269   |  6,905   |  8,907   |  10,809  |  12,544  | 3,364,299 |
+|       Avro       |  2,475   |  2,801   |  3,473   |  4,043   |  4,664   |  5,382   | 1,040,887 |
 
 ### Serialized message size (bytes)
 
@@ -37,4 +38,5 @@ these serialization algorithms have been implemented:
 |       Kryo       |   141    |   486    |   829    |  1,173   |  1,516   |  1,860   | 633,231 |
 |     ProtoBuf     |   141    |   508    |   872    |  1,236   |  1,601   |  1,965   | 633,232 |
 | JSON (fasterxml) |   353    |   830    |  1,308   |  1,786   |  2,264   |  2,742   | 650,820 |
+|       Avro       |   126    |   475    |   821    |  1,168   |  1,514   |  1,861   | 633,231 |
 
