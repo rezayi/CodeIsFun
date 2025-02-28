@@ -1,0 +1,8 @@
+spring:
+  graphql:
+    schema:
+      printer:
+        enabled: true
+    path: /graphql
+    graphiql:
+      enabled: true

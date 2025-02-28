@@ -19,6 +19,7 @@
     <modules>
         <module>message-brokers</module>
         <module>serializations</module>
+        <module>apis-rpcs</module>
     </modules>
 
     <properties>
