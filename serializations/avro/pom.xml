@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>avro</artifactId>
+    <name>CodeIsFun :: Examples :: Serializations :: Avro</name>
 
     <dependencies>
         <dependency>

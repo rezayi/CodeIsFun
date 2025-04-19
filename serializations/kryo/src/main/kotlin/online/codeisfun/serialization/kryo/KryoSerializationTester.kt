@@ -30,7 +30,8 @@ class KryoSerializationTester : AbstractSerializationTester<ByteArray>() {
         msg: ByteArray,
         clazz: Class<JavaObjectDataType>
     ): JavaObjectDataType {
-        val input = Input(ByteArrayInputStream(msg))
+        val byteArrayInputStream = ByteArrayInputStream(msg)
+        val input = Input(byteArrayInputStream)
         val deserialized = kryo.readObject(input, clazz)
         input.close()
         return deserialized
