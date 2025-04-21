@@ -4,6 +4,7 @@ In this project we are going to test some of Spring Boot libraries and integrati
 
 - [Message Brokers](message-brokers/README.md)
 - [Serializations](serializations/README.md)
+- [Spring Tools](/spring-tools/README.md)
 
 TODO:
 - Data structures

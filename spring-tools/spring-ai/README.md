@@ -1,4 +1,4 @@
-# Getting Started
+## CodeIsFun :: Spring Tools :: Spring AI
 
 ### Reference Documentation
 
