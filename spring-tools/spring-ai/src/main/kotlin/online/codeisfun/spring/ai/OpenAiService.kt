@@ -1,7 +1,7 @@
 package online.codeisfun.spring.ai
 
-import online.codeisfun.spring.ai.ChatRequest
-import online.codeisfun.spring.ai.ChatResponse
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.commons.lang3.StringUtils
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor
@@ -9,6 +9,7 @@ import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor
 import org.springframework.ai.chat.client.advisor.SafeGuardAdvisor
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor
 import org.springframework.ai.chat.memory.ChatMemory
+import org.springframework.ai.chat.prompt.PromptTemplate
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -39,6 +40,45 @@ class OpenAiService(
         return ChatResponse(
             chatId = chatId,
             response = response.content(),
+            meta = response.chatResponse()?.metadata
+        )
+    }
+
+    fun movieSuggestion(movieSuggestionRequest: MovieSuggestionRequest): ChatResponse {
+        val requestTemplate = """
+            I want a list of 5 movies with the genres: {genres}
+            the movies should be between years {startYear} , {endYear}
+            and I expect their IMDB score be higher that {imdbScore}.
+            Then provide me with a list of 5 movies with their name, IMDB score, genres, production year.
+             Provide the result in json format. don't describe anything. the response should be a valid json format.
+             don't add ui formatter. I need it convertable to object.
+        """.trimIndent()
+        val template = PromptTemplate(requestTemplate)
+        val params = mapOf(
+            "genres" to movieSuggestionRequest.genres,
+            "startYear" to movieSuggestionRequest.startYear,
+            "endYear" to movieSuggestionRequest.endYear,
+            "imdbScore" to movieSuggestionRequest.imdbScore,
+        )
+        val prompt = template.create(params)
+        val chatId: String = UUID.randomUUID().toString()
+        val response = chatClient
+            .prompt(prompt)
+            .advisors { advisorSpec ->
+                advisorSpec.param(
+                    AbstractChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY,
+                    chatId
+                )
+            }
+            .call()
+        val trimmedResponse = response.content()
+            ?.replace("```json", "")
+            ?.replace("```", "")
+
+        val list = ObjectMapper().readValue(trimmedResponse, object : TypeReference<List<MovieSuggestionResponse>>() {})
+        return ChatResponse(
+            chatId = chatId,
+            response = list,
             meta = response.chatResponse()?.metadata
         )
     }
