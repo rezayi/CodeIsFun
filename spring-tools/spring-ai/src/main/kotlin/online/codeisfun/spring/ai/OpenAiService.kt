@@ -44,6 +44,51 @@ class OpenAiService(
         )
     }
 
+    fun chatStream(chatRequest: ChatRequest): ChatResponse {
+        val chatId: String = StringUtils.defaultIfBlank(chatRequest.chatId, UUID.randomUUID().toString())
+        val response = chatClient
+            .prompt()
+            .advisors { advisorSpec ->
+                advisorSpec.param(
+                    AbstractChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY,
+                    chatId
+                )
+            }
+            .user(chatRequest.question)
+            .stream()
+
+        val contentBuilder = StringBuilder()
+        var totalTokens = 0
+        response.chatResponse()
+            .toStream()
+            .forEach { chatResponse ->
+                println("Metadata: ${chatResponse.metadata}")  // To see if 'metadata' contains usage information
+                chatResponse.metadata?.let { metadata ->
+                    metadata.usage?.let { usage ->
+                        val tokensUsed = usage.totalTokens
+                        totalTokens += tokensUsed
+                        println("Tokens used: $tokensUsed")
+                    } ?: run {
+                        println("Usage info not available")
+                    }
+                }
+                chatResponse.result.output.text
+                    ?.let { content ->
+                    contentBuilder.append(content)
+                    println("content: $content")
+                } ?: run {
+                    println(chatResponse.metadata)
+                }
+            }
+        println("final totalTokens: $totalTokens")
+
+        return ChatResponse(
+            chatId = chatId,
+            response = contentBuilder.toString(),
+            meta = null
+        )
+    }
+
     fun movieSuggestion(movieSuggestionRequest: MovieSuggestionRequest): ChatResponse {
         val requestTemplate = """
             I want a list of 5 movies with the genres: {genres}

@@ -14,6 +14,11 @@ class ChatController(val openAiService: OpenAiService) {
         return openAiService.chat(chatRequest)
     }
 
+    @PostMapping("chat/stream")
+    fun chatStream(@RequestBody chatRequest: ChatRequest): ChatResponse {
+        return openAiService.chatStream(chatRequest)
+    }
+
     @PostMapping("movies")
     fun movieSuggestion(@RequestBody movieSuggestionRequest: MovieSuggestionRequest): ChatResponse {
         return openAiService.movieSuggestion(movieSuggestionRequest)
